@@ -10,7 +10,7 @@ import redis.clients.jedis.JedisPool;
 
 public class QueueFactory {
 
-  protected static <T extends Document> RedisqBuilder<T> builder(final JedisPool pool, final Class<T> clazz, final String queueName) {
+  public static <T extends Document> RedisqBuilder<T> builder(final JedisPool pool, final Class<T> clazz, final String queueName) {
     return new RedisqBuilder<T>()
       .setJedisPool(pool)
       .setName(queueName)
